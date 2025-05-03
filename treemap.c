@@ -99,7 +99,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
         if (tree->lower_than(key, node->pair->key) == 0) {
             tree->current = node;
             return node->pair;
-        } else if (tree->lower_than(node->pair->key, key) == 0) {
+        } else if (tree->lower_than(node->pair->key, key) != 0) {
             node = node->right;
         } else {
             node = node->left;
