@@ -26,3 +26,14 @@ Sat, May  3, 2025  5:40:43 PM:
  tests:  4|7
 total_score: 5/70
 9e6736c
+Sat, May  3, 2025  5:47:19 PM: 
+ treemap.c | 19 +++++++++++++++++--
+ 1 file changed, 17 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:0:
+treemap.c: In function 'searchTreeMap':
+treemap.c:97:11: error: 'nod' undeclared (first use in this function)
+     while(nod!=NULL)
+           ^~~
+treemap.c:97:11: note: each undeclared identifier is reported only once for each function it appears in
+4ada1f1
