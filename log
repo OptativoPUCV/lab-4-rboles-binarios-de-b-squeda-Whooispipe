@@ -97,3 +97,9 @@ Sat, May  3, 2025  6:23:14 PM:
  tests:  11|6
 total_score: 15/70
 b59c2d8
+Sat, May  3, 2025  7:37:05 PM: 
+ treemap.c | 38 ++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 36 insertions(+), 2 deletions(-)
+ tests:  13|5
+total_score: 25/70
+06b1115

@@ -55,8 +55,10 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 }
 
 
-/*3.- Implemente la función void insertTreeMap(TreeMap * tree, void* key, void * value). Esta función inserta un nuevo dato (key,value) en el árbol y hace que el current apunte al nuevo nodo.
-Para insertar un dato, primero debe realizar una búsqueda para encontrar donde debería ubicarse. Luego crear el nuevo nodo y enlazarlo. Si la clave del dato ya existe retorne sin hacer nada (recuerde que el mapa no permite claves repetidas).
+/*3.- Implemente la función void insertTreeMap(TreeMap * tree, void* key, void * value). Esta función inserta un nuevo dato
+ (key,value) en el árbol y hace que el current apunte al nuevo nodo.
+Para insertar un dato, primero debe realizar una búsqueda para encontrar donde debería ubicarse. Luego crear el nuevo nodo4
+ y enlazarlo. Si la clave del dato ya existe retorne sin hacer nada (recuerde que el mapa no permite claves repetidas).
    
     void insertTreeMap(TreeMap* tree, void* key, void* value){
 
@@ -67,6 +69,38 @@ Para insertar un dato, primero debe realizar una búsqueda para encontrar donde 
 */
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
+    if (tree == NULL) return;
+    if (searchTreeMap(tree, key) != NULL) return; // Key already exists
+
+    TreeNode * new = createTreeNode(key, value);
+    if (new == NULL) return;
+
+    if (tree->root == NULL) {
+        tree->root = new;
+        tree->current = new;
+        return;
+    }
+
+    TreeNode * node = tree->root;
+    TreeNode * parent = NULL;
+
+    while (node != NULL) {
+        parent = node;
+        if (tree->lower_than(new->pair->key, node->pair->key)) {
+            node = node->left;
+        } else {
+            node = node->right;
+        }
+    }
+
+    new->parent = parent;
+    if (tree->lower_than(new->pair->key, parent->pair->key)) {
+        parent->left = new;
+    } else {
+        parent->right = new;
+    }
+
+    tree->current = new; // Set current to the newly inserted node
 
 }
 
