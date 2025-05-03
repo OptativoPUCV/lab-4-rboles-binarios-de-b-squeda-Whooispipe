@@ -90,7 +90,7 @@ Recuerde hacer que el current apunte al nodo encontrado.
     }s
 
 */
-
+/*
 Pair * searchTreeMap(TreeMap * tree, void* key) {
     if (tree == NULL || tree->root == NULL) return NULL;
     TreeNode* node = tree->root;
@@ -113,6 +113,26 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     }
     return NULL;
 }
+*/
+Pair * searchTreeMap(TreeMap * tree, void* key) {
+    if (tree == NULL || tree->root == NULL) return NULL;
+    TreeNode* node = tree->root;
+    while (node != NULL) {
+        if (!tree->lower_than(key, node->pair->key) && !tree->lower_than(node->pair->key, key)) {
+            tree->current = node;
+            return node->pair;
+        } else if (tree->lower_than(key, node->pair->key)) {
+            node = node->left;
+        } else {
+            node = node->right;
+        }
+    }
+    return NULL;
+}
+
+
+
+
 
 Pair * upperBound(TreeMap * tree, void* key) {
     return NULL;
