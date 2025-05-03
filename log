@@ -37,3 +37,9 @@ treemap.c:97:11: error: 'nod' undeclared (first use in this function)
            ^~~
 treemap.c:97:11: note: each undeclared identifier is reported only once for each function it appears in
 4ada1f1
+Sat, May  3, 2025  5:47:34 PM: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|7
+total_score: 5/70
+be3cca6
