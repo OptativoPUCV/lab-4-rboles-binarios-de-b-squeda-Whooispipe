@@ -197,3 +197,26 @@ Sun, May  4, 2025  7:53:06 PM:
  tests:  18|3
 total_score: 40/70
 06213ab
+Sun, May  4, 2025  7:59:56 PM: 
+ treemap.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+Compilation failed
+In file included from test.c:4:0:
+treemap.c: In function 'firstTreeMap':
+treemap.c:240:29: error: passing argument 1 of 'minimum' from incompatible pointer type [-Werror=incompatible-pointer-types]
+     TreeNode nodo  =minimum(tree);
+                             ^~~~
+treemap.c:108:12: note: expected 'TreeNode * {aka struct TreeNode *}' but argument is of type 'TreeMap * {aka struct TreeMap *}'
+ TreeNode * minimum(TreeNode * x){
+            ^~~~~~~
+treemap.c:240:21: error: invalid initializer
+     TreeNode nodo  =minimum(tree);
+                     ^~~~~~~
+treemap.c:242:12: error: incompatible types when returning type 'TreeNode {aka struct TreeNode}' but 'Pair * {aka struct Pair *}' was expected
+     return nodo;
+            ^~~~
+treemap.c:243:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+e80e681
