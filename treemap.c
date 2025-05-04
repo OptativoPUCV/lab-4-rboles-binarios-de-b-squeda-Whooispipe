@@ -71,9 +71,10 @@ donde debería ubicarse. Luego crear el nuevo nodo4
 */
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-    Pair* newPair= searchTreeMap(tree, key);
-    if (newPair != NULL) return; // Key already exists, do nothing
-    while(node != NULL) {
+    if(searchTreeMap(tree, key) != NULL) return; 
+    TreeNode * parent=NULL;
+    TreeNode * node = tree->root;
+    while (node != NULL) {
         parent = node;
         if (tree->lower_than(key, node->pair->key)) {
             node = node->left;
@@ -81,20 +82,16 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
             node = node->right;
         }
     }
-    TreeNode * newNode = createTreeNode(key, value);
-    if (newNode == NULL) return; // Memory allocation failed
-    newNode->parent = parent;
+    TreeNode * new = createTreeNode(key, value);
+    new->parent =parent;
     if (parent == NULL) {
-        tree->root = newNode; // Tree was empty, new node is root
+        tree->root = new;
     } else if (tree->lower_than(key, parent->pair->key)) {
-        parent->left = newNode; // New node is left child
+        parent->left = new;
     } else {
-        parent->right = newNode; // New node is right child
+        parent->right = new;
     }
-    tree->current = newNode; // Set current to the new node
-    
-
-
+    tree->current = new;
     
 
 }
