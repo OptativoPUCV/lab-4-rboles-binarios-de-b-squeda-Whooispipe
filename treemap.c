@@ -71,8 +71,6 @@ donde debería ubicarse. Luego crear el nuevo nodo4
 */
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-    TreeNode *parent =NULL;
-    TreeNode *node = tree->root;
     Pair* newPair= searchTreeMap(tree, key);
     if (newPair != NULL) return; // Key already exists, do nothing
     while(node != NULL) {
