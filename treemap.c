@@ -82,6 +82,17 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         }
     }
     TreeNode * newNode = createTreeNode(key, value);
+    if (newNode == NULL) return; // Memory allocation failed
+    newNode->parent = parent;
+    if (parent == NULL) {
+        tree->root = newNode; // Tree was empty, new node is root
+    } else if (tree->lower_than(key, parent->pair->key)) {
+        parent->left = newNode; // New node is left child
+    } else {
+        parent->right = newNode; // New node is right child
+    }
+    tree->current = newNode; // Set current to the new node
+    
 
 
     
