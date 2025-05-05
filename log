@@ -315,3 +315,20 @@ C:\Users\pipes\Documents\GitHub\lab-4-rboles-binarios-de-b-squeda-Whooispipe/tes
 C:\Users\pipes\AppData\Local\Temp\cc0QediJ.o:C:\Users\pipes\Documents\GitHub\lab-4-rboles-binarios-de-b-squeda-Whooispipe/test.c:141: more undefined references to `searchTreeMap' follow
 collect2.exe: error: ld returned 1 exit status
 994c1e0
+Sun, May  4, 2025  9:17:49 PM: 
+ treemap.c | 24 ------------------------
+ 1 file changed, 24 deletions(-)
+Compilation failed
+C:\Users\pipes\AppData\Local\Temp\ccsvF2Ms.o: In function `insertTreeMap':
+C:\Users\pipes\Documents\GitHub\lab-4-rboles-binarios-de-b-squeda-Whooispipe/treemap.c:74: undefined reference to `searchTreeMap'
+C:\Users\pipes\AppData\Local\Temp\ccsvF2Ms.o: In function `eraseTreeMap':
+C:\Users\pipes\Documents\GitHub\lab-4-rboles-binarios-de-b-squeda-Whooispipe/treemap.c:177: undefined reference to `searchTreeMap'
+C:\Users\pipes\AppData\Local\Temp\ccsvF2Ms.o: In function `search_test1':
+C:\Users\pipes\Documents\GitHub\lab-4-rboles-binarios-de-b-squeda-Whooispipe/test.c:104: undefined reference to `searchTreeMap'
+C:\Users\pipes\AppData\Local\Temp\ccsvF2Ms.o: In function `search_test2':
+C:\Users\pipes\Documents\GitHub\lab-4-rboles-binarios-de-b-squeda-Whooispipe/test.c:122: undefined reference to `searchTreeMap'
+C:\Users\pipes\AppData\Local\Temp\ccsvF2Ms.o: In function `search_test3':
+C:\Users\pipes\Documents\GitHub\lab-4-rboles-binarios-de-b-squeda-Whooispipe/test.c:141: undefined reference to `searchTreeMap'
+C:\Users\pipes\AppData\Local\Temp\ccsvF2Ms.o:C:\Users\pipes\Documents\GitHub\lab-4-rboles-binarios-de-b-squeda-Whooispipe/test.c:161: more undefined references to `searchTreeMap' follow
+collect2.exe: error: ld returned 1 exit status
+56f4dba
