@@ -220,3 +220,29 @@ treemap.c:243:1: error: control reaches end of non-void function [-Werror=return
  ^
 cc1.exe: all warnings being treated as errors
 e80e681
+Sun, May  4, 2025  8:00:23 PM: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:0:
+treemap.c: In function 'firstTreeMap':
+treemap.c:240:29: error: passing argument 1 of 'minimum' from incompatible pointer type [-Werror=incompatible-pointer-types]
+     TreeNode nodo  =minimum(tree);
+                             ^~~~
+treemap.c:108:12: note: expected 'TreeNode * {aka struct TreeNode *}' but argument is of type 'TreeMap * {aka struct TreeMap *}'
+ TreeNode * minimum(TreeNode * x){
+            ^~~~~~~
+treemap.c:240:21: error: invalid initializer
+     TreeNode nodo  =minimum(tree);
+                     ^~~~~~~
+treemap.c:242:5: error: 'return' with no value, in function returning non-void [-Werror]
+     return;
+     ^~~~~~
+treemap.c:239:8: note: declared here
+ Pair * firstTreeMap(TreeMap * tree) {
+        ^~~~~~~~~~~~
+treemap.c:240:14: error: unused variable 'nodo' [-Werror=unused-variable]
+     TreeNode nodo  =minimum(tree);
+              ^~~~
+cc1.exe: all warnings being treated as errors
+60a1ace

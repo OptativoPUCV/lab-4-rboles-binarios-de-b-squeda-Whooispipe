@@ -239,7 +239,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 Pair * firstTreeMap(TreeMap * tree) {
     TreeNode nodo  =minimum(tree);
 
-    return nodo;
+    return;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
