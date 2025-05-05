@@ -225,11 +225,11 @@ Para implementarla puede realizar una búsqueda normal y usar un puntero a nodo 
     Pair* upperBound(TreeMap* tree, void* key) {
         if (tree == NULL || tree->root == NULL) return NULL;
     
-        // Primero intentamos encontrar la clave exacta
+        
         Pair* found = searchTreeMap(tree, key);
         if (found != NULL) return found;
     
-        // Si no existe, buscamos la clave mínima mayor a key
+      
         TreeNode* node = tree->root;
         TreeNode* ub_node = NULL;
     
