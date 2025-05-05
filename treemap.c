@@ -211,11 +211,49 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 
+/*7.- La función Pair* upperBound(TreeMap* tree, void* key) 
+retorna el **Pair** con clave igual a key. En caso de no encontrarlo retorna el primer 
+par asociado a una clave mayor o igual a key. 
+Para implementarla puede realizar una búsqueda normal y usar un puntero a nodo auxiliar
+ ub_node que vaya guardando el nodo con la menor clave *mayor o igual a key*. Finalmente retorne el par del nodo ub\_node.
 
+    Pair* upperBound(TreeMap* tree, void* key){
+        
 
-Pair * upperBound(TreeMap * tree, void* key) {
-    return NULL;
-}
+    }*/
+
+    Pair* upperBound(TreeMap* tree, void* key) {
+        if (tree == NULL || tree->root == NULL) return NULL;
+    
+        TreeNode* node = tree->root;
+        TreeNode* ub_node = NULL;
+    
+        while (node != NULL) {
+            if (!tree->lower_than(key, node->pair->key) && 
+                !tree->lower_than(node->pair->key, key)) {
+                // key == node->pair->key
+                tree->current = node;
+                return node->pair;
+            }
+            else if (tree->lower_than(key, node->pair->key)) {
+                // key < node->key → candidate for upper bound
+                ub_node = node;
+                node = node->left;
+            }
+            else {
+                // key > node->key → go right
+                node = node->right;
+            }
+        }
+    
+        if (ub_node != NULL) {
+            tree->current = ub_node;
+            return ub_node->pair;
+        }
+    
+        return NULL;  // no upper bound found
+    }
+    
 
 /*6.- Implemente las funciones para recorrer la estructura: Pair* firstTreeMap(TreeMap* tree) retorna el primer **Pair** del mapa 
 (el menor). Pair* nextTreeMap(TreeMap* tree)  retornar el siguiente **Pair**
