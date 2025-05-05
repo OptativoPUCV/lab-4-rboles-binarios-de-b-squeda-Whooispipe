@@ -222,10 +222,9 @@ Para implementarla puede realizar una búsqueda normal y usar un puntero a nodo 
 
     }*/
 
-    Pair* upperBound(TreeMap* tree, void* key) {
-        
-    }
-    
+Pair * upperBound(TreeMap * tree, void* key) {
+    return NULL;
+}
 
 /*6.- Implemente las funciones para recorrer la estructura: Pair* firstTreeMap(TreeMap* tree) retorna el primer **Pair** del mapa 
 (el menor). Pair* nextTreeMap(TreeMap* tree)  retornar el siguiente **Pair**
