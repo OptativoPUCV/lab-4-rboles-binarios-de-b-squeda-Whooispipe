@@ -246,6 +246,14 @@ Pair * nextTreeMap(TreeMap * tree) {
     if (tree == NULL || tree->current == NULL) return NULL;
 
     TreeNode* node = tree->current;
+    if (node->right != NULL) {
+        node = node->right;
+        while (node->left != NULL) {
+            node = node->left;
+        }
+        tree->current = node;  
+        return node->pair;
+    }
 
 
 
