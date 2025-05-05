@@ -332,3 +332,9 @@ C:\Users\pipes\Documents\GitHub\lab-4-rboles-binarios-de-b-squeda-Whooispipe/tes
 C:\Users\pipes\AppData\Local\Temp\ccsvF2Ms.o:C:\Users\pipes\Documents\GitHub\lab-4-rboles-binarios-de-b-squeda-Whooispipe/test.c:161: more undefined references to `searchTreeMap' follow
 collect2.exe: error: ld returned 1 exit status
 56f4dba
+Sun, May  4, 2025  9:18:25 PM: 
+ treemap.c | 37 ++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 36 insertions(+), 1 deletion(-)
+ tests:  29|0
+total_score: 70/70
+439dbe7
